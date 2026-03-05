@@ -1,0 +1,53 @@
+<section class="wrap">
+	<div class="card">
+		<h2>My Orders</h2>
+		<p class="sub">Your orders and their status.</p>
+
+		<p class="msg ok" *ngIf="message">{{ message }}</p>
+		<p class="msg err" *ngIf="error">{{ error }}</p>
+
+		<ng-container *ngIf="(orders$ | async) as orders">
+			<div class="empty" *ngIf="orders.length === 0">
+				You have no orders yet.
+				<a class="link" routerLink="/products">Go to products</a>
+			</div>
+
+			<div class="order" *ngFor="let o of orders; trackBy: trackById">
+				<div class="head">
+					<div>
+						<div class="id">Order: {{ o._id }}</div>
+						<div class="meta">
+							<span class="pill" [class.pending]="o.status === 'pending'" [class.done]="o.status === 'completed' || o.status === 'delivered'">
+								{{ statusLabel(o) }}
+							</span>
+							<span class="date">{{ o.createdAt | date: 'medium' }}</span>
+						</div>
+						<div class="delivery" *ngIf="o.status === 'completed' || o.status === 'confirmed'">
+							Delivery tomorrow
+						</div>
+					</div>
+					<div class="right">
+						<div class="total">${{ o.total }}</div>
+						<button
+							*ngIf="o.status === 'pending'"
+							class="btn danger"
+							[disabled]="isRequestingCancel(o._id) || o.cancelRequest?.requested"
+							(click)="requestCancel(o._id)"
+						>
+							{{ o.cancelRequest?.requested ? 'Cancel Requested' : (isRequestingCancel(o._id) ? 'Requesting…' : 'Request Cancel') }}
+						</button>
+					</div>
+				</div>
+
+				<div class="items">
+					<div class="item" *ngFor="let it of o.items">
+						<img *ngIf="it.image" [src]="imgUrl(it.image)" alt="" width="44" height="44" style="object-fit: cover; border-radius: 8px; margin-right: 10px;" />
+						<div class="name">{{ it.name }}</div>
+						<div class="qty">x{{ it.quantity }}</div>
+						<div class="price">${{ it.unitPrice }}</div>
+					</div>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+</section>

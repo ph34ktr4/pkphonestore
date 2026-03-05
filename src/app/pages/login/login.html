@@ -1,0 +1,30 @@
+<section class="wrap">
+	<div class="card">
+		<h2>Login</h2>
+		<p class="sub">Sign in to your account.</p>
+
+		<form [formGroup]="form" (ngSubmit)="submit()">
+			<label class="field">
+				<span>Email</span>
+				<input type="email" formControlName="email" placeholder="you@example.com" />
+				<small *ngIf="form.controls.email.touched && form.controls.email.invalid">Enter a valid email.</small>
+			</label>
+
+			<label class="field">
+				<span>Password</span>
+				<input type="password" formControlName="password" placeholder="••••••••" />
+				<small *ngIf="form.controls.password.touched && form.controls.password.invalid">Password is required.</small>
+			</label>
+
+			<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+			<button class="btn" type="submit" [disabled]="isSubmitting">
+				{{ isSubmitting ? 'Signing in...' : 'Login' }}
+			</button>
+
+			<p class="muted">
+				Don't have an account? <a [routerLink]="['/register']" [queryParams]="returnUrl ? { returnUrl: returnUrl } : {}">Register</a>
+			</p>
+		</form>
+	</div>
+</section>

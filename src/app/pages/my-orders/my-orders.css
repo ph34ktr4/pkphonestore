@@ -1,0 +1,163 @@
+.wrap {
+	display: grid;
+	place-items: center;
+	padding: 24px 0;
+}
+
+.card {
+	width: 100%;
+	max-width: 820px;
+	border: 1px solid #ececec;
+	border-radius: 18px;
+	background: #fff;
+	padding: 18px;
+	box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+}
+
+.sub {
+	margin: 6px 0 14px;
+	color: #666;
+}
+
+.msg {
+	margin: 10px 0;
+	padding: 10px 12px;
+	border-radius: 12px;
+	border: 1px solid #eee;
+	font-weight: 800;
+}
+
+.msg.ok {
+	background: #e9fff1;
+	border-color: #b7f7cf;
+	color: var(--success);
+}
+
+.msg.err {
+	background: #fff2f2;
+	border-color: #ffd0d0;
+	color: var(--danger);
+}
+
+.empty {
+	padding: 16px;
+	border: 1px solid #eee;
+	border-radius: 14px;
+}
+
+.link {
+	margin-left: 10px;
+	text-decoration: none;
+	color: var(--primary);
+	font-weight: 800;
+}
+
+.order {
+	border: 1px solid #f0f0f0;
+	border-radius: 16px;
+	padding: 12px;
+	margin-top: 12px;
+	background: #fafafa;
+}
+
+.head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.id {
+	font-weight: 900;
+}
+
+.meta {
+	margin-top: 6px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.delivery {
+	margin-top: 6px;
+	font-weight: 900;
+	color: var(--success);
+}
+
+.pill {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 10px;
+	border-radius: 999px;
+	border: 1px solid #e7e7e7;
+	font-weight: 800;
+	font-size: 12px;
+	text-transform: capitalize;
+}
+
+.pill.pending {
+	background: #fff7e6;
+	border-color: #ffe2ad;
+	color: #8a5a00;
+}
+
+.pill.done {
+	background: #e9fff1;
+	border-color: #b7f7cf;
+	color: #0b6b2d;
+}
+
+.total {
+	font-weight: 900;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 8px;
+}
+
+.btn {
+	border: 1px solid #e3e3e3;
+	background: #fff;
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-weight: 800;
+	cursor: pointer;
+}
+
+.btn:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.btn.danger {
+	border-color: #ffd0d0;
+	background: #fff2f2;
+	color: #b00020;
+}
+
+.items {
+	margin-top: 10px;
+}
+
+.item {
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	gap: 10px;
+	padding: 8px 0;
+	border-top: 1px solid #ededed;
+}
+
+.name {
+	font-weight: 700;
+}
+
+.qty {
+	color: #555;
+}
+
+.price {
+	font-weight: 900;
+}

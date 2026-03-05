@@ -1,0 +1,22 @@
+<article class="card">
+	<a class="imageWrap" [routerLink]="['/product', product._id]">
+		<img imgRetry class="image" [src]="imageSrc" [alt]="product.name" />
+	</a>
+
+	<div class="body">
+		<h3 class="name">{{ product.name }}</h3>
+		<p class="brand">{{ brandName }}</p>
+		<p class="desc" *ngIf="descriptionShort">{{ descriptionShort }}</p>
+
+		<div class="bottom">
+			<div class="price">
+				<span class="priceNow">${{ product.discountPrice || product.price }}</span>
+				<span class="priceWas" *ngIf="product.discountPrice && product.discountPrice < product.price">${{ product.price }}</span>
+			</div>
+			<div class="actions">
+				<a class="btn" [routerLink]="['/product', product._id]">View</a>
+				<button class="btn btnPrimary" type="button" (click)="addToCart()">Add to cart</button>
+			</div>
+		</div>
+	</div>
+</article>

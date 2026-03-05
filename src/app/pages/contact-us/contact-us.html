@@ -1,0 +1,41 @@
+<section class="hero">
+	<div class="copy">
+		<h1>Contact Us</h1>
+		<p class="muted">Need help, want to order in bulk, or have a question? Send a message.</p>
+	</div>
+	<a class="btn btnSoft" routerLink="/products">Back to products</a>
+</section>
+
+<app-contact-section [showCta]="false"></app-contact-section>
+
+<section class="formWrap">
+	<h2>Send a message</h2>
+	<p class="muted">This opens your email app (no server required).</p>
+
+	<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+		<div class="row">
+			<label>
+				<span>Name</span>
+				<input class="input" formControlName="name" placeholder="Your name" />
+				<small class="error" *ngIf="form.controls.name.touched && form.controls.name.invalid">Name is required.</small>
+			</label>
+
+			<label>
+				<span>Email</span>
+				<input class="input" formControlName="email" placeholder="you@example.com" />
+				<small class="error" *ngIf="form.controls.email.touched && form.controls.email.invalid">Valid email is required.</small>
+			</label>
+		</div>
+
+		<label>
+			<span>Message</span>
+			<textarea class="input" rows="6" formControlName="message" placeholder="How can we help?"></textarea>
+			<small class="error" *ngIf="form.controls.message.touched && form.controls.message.invalid">Message is required.</small>
+		</label>
+
+		<div class="actions">
+			<button class="btn btnPrimary" type="submit" [disabled]="isSubmitting">Send</button>
+			<a class="btn btnSoft" routerLink="/">Go home</a>
+		</div>
+	</form>
+</section>

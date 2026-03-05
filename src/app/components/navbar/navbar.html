@@ -1,0 +1,63 @@
+<header class="nav">
+	<a class="brand" routerLink="/">PK Phone Store</a>
+
+	<nav class="links">
+		<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+		<div class="drop" #brandDrop *ngIf="!auth.isAdmin(); else productsOnly">
+			<a routerLink="/products" [queryParams]="{}" routerLinkActive="active">Products</a>
+			<button
+				type="button"
+				class="dropToggle"
+				(click)="toggleBrandsMenu($event)"
+				[attr.aria-expanded]="brandsMenuOpen"
+				aria-label="Toggle brand menu"
+			>
+				▾
+			</button>
+			<div class="menu" [class.open]="brandsMenuOpen">
+				<button type="button" class="menuItem" (click)="goToBrand()">All Brands</button>
+				<button
+					type="button"
+					class="menuItem"
+					*ngFor="let b of brands"
+					(click)="goToBrand(b._id)"
+				>
+					{{ b.name }}
+				</button>
+			</div>
+		</div>
+		<ng-template #productsOnly>
+			<a routerLink="/products" [queryParams]="{}" routerLinkActive="active">Products</a>
+		</ng-template>
+
+		<form class="search" (ngSubmit)="onSearch()">
+			<input
+				class="searchInput"
+				type="search"
+				name="q"
+				placeholder="Search product..."
+				[(ngModel)]="searchTerm"
+			/>
+			<button class="searchBtn" type="submit">Search</button>
+		</form>
+
+		<a *ngIf="!auth.isAdmin()" class="cartLink" routerLink="/cart" routerLinkActive="active">
+			Cart
+			<ng-container *ngIf="(cartCount$ | async) as count">
+				<span *ngIf="count > 0" class="badge">{{ count }}</span>
+			</ng-container>
+		</a>
+		<a *ngIf="auth.isLoggedIn() && !auth.isAdmin()" routerLink="/my-orders" routerLinkActive="active">My Orders</a>
+		<a routerLink="/about" routerLinkActive="active">About Us</a>
+		<a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+		<a *ngIf="auth.isAdmin()" routerLink="/admin/add-product" routerLinkActive="active">Add Product</a>
+		<a *ngIf="auth.isAdmin()" class="cartLink" routerLink="/admin/orders" routerLinkActive="active">
+			Orders
+			<ng-container *ngIf="(pendingOrdersCount$ | async) as p">
+				<span *ngIf="p > 0" class="badge">{{ p }}</span>
+			</ng-container>
+		</a>
+		<a *ngIf="!auth.isLoggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+		<button *ngIf="auth.isLoggedIn()" class="linkBtn" type="button" (click)="logout()">Logout</button>
+	</nav>
+</header>

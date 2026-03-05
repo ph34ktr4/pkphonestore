@@ -1,0 +1,60 @@
+<section class="contactBlock" aria-label="Contact information">
+	<div class="inner">
+		<div class="topRow">
+			<div class="col brandCol">
+				<div class="brandRow">
+					<div class="logoBox" aria-hidden="true">{{ logoText }}</div>
+					<div class="brandMeta">
+						<div class="brandName">{{ brandName }}</div>
+						<div class="brandHint muted">{{ title }}</div>
+					</div>
+				</div>
+
+				<div class="callTitle muted">{{ subtitle }}</div>
+				<ul class="contactList" *ngIf="phones.length">
+					<li class="contactItem" *ngFor="let p of phones">
+						<span class="icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 10.8 19.8 19.8 0 0 1 .08 2.18 2 2 0 0 1 2.06 0h3a2 2 0 0 1 2 1.72c.12.86.3 1.7.54 2.5a2 2 0 0 1-.45 2.11L6.09 7.41a16 16 0 0 0 10.5 10.5l1.08-1.06a2 2 0 0 1 2.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0 1 22 16.92Z"/>
+							</svg>
+						</span>
+						<a class="contactLink" [href]="telHref(p)">{{ p }}</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col infoCol">
+				<div class="infoBlock">
+					<div class="label">Address:</div>
+					<div class="value">
+						<div *ngFor="let line of addressLines">{{ line }}</div>
+					</div>
+				</div>
+
+				<div class="infoBlock">
+					<div class="label">Email:</div>
+					<div class="value">
+						<a class="contactLink" [href]="'mailto:' + email">{{ email }}</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col linksCol">
+				<div class="linksTitle">Quick Links</div>
+				<div class="linksGrid">
+					<a routerLink="/products">Products</a>
+					<a routerLink="/about">About</a>
+					<a routerLink="/contact">Contact</a>
+					<a routerLink="/cart">Cart</a>
+					<a routerLink="/login">Login</a>
+					<a routerLink="/register">Register</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="cta" *ngIf="showCta">
+			<a class="btn btnPrimary" routerLink="/contact">Message Us</a>
+			<a class="btn btnSoft" routerLink="/products">Browse Products</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,41 @@
+<section class="wrap">
+	<div class="card">
+		<h2>Register</h2>
+		<p class="sub">Create a customer account to place orders.</p>
+
+		<form [formGroup]="form" (ngSubmit)="submit()">
+			<label class="field">
+				<span>Username</span>
+				<input formControlName="username" placeholder="Your name" />
+				<small *ngIf="form.controls.username.touched && form.controls.username.invalid">Username is required.</small>
+			</label>
+
+			<label class="field">
+				<span>Email</span>
+				<input type="email" formControlName="email" placeholder="you@example.com" />
+				<small *ngIf="form.controls.email.touched && form.controls.email.invalid">Enter a valid email.</small>
+			</label>
+
+			<label class="field">
+				<span>Phone (optional)</span>
+				<input formControlName="phone" placeholder="012345678" />
+			</label>
+
+			<label class="field">
+				<span>Password</span>
+				<input type="password" formControlName="password" placeholder="••••••••" />
+				<small *ngIf="form.controls.password.touched && form.controls.password.invalid">Password is required.</small>
+			</label>
+
+			<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+			<button class="btn" type="submit" [disabled]="isSubmitting">
+				{{ isSubmitting ? 'Creating...' : 'Register' }}
+			</button>
+
+			<p class="muted">
+				Already have an account? <a [routerLink]="['/login']" [queryParams]="returnUrl ? { returnUrl: returnUrl } : {}">Login</a>
+			</p>
+		</form>
+	</div>
+</section>

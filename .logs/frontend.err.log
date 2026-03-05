@@ -1,0 +1,734 @@
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'center' is not a known element:
+1. If 'center' is an Angular component, then verify that it is included in the '@Component.imports' of this component.
+2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@Component.schemas' of this component.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/footer/footer.html:0:0:
+[37m      0 │ [32m[37m
+        ╵ [32m^[0m
+
+  Error occurs in the template of component Footer.
+
+    src/app/components/footer/footer.ts:7:15:
+[37m      7 │   templateUrl: [32m'./footer.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'center' is not a known element:
+1. If 'center' is an Angular component, then verify that it is included in the '@Component.imports' of this component.
+2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@Component.schemas' of this component.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/footer/footer.html:3:1:
+[37m      3 │   [32m<center>[37m
+        ╵   [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Footer.
+
+    src/app/components/footer/footer.ts:7:15:
+[37m      7 │   templateUrl: [32m'./footer.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: RouterLink is not used within the template of CartComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:11:26:
+[37m      11 │   imports: [CommonModule, [32mRouterLink[37m],
+         ╵                           [32m~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:16:25:
+[37m      16 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/cart/cart.ts:17:25:
+[37m      17 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/cart/cart.ts:26:14:
+[37m      26 │   constructor([32mprivate readonly cart: Cart[37m) {}
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'isLoading' does not exist on type 'ProductDetailComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/product-detail/product-detail.html:1:10:
+[37m      1 │ <p *ngIf="[32misLoading[37m">Loading…</p>
+        ╵           [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductDetailComponent.
+
+    src/app/pages/product-detail/product-detail.ts:14:15:
+[37m      14 │   templateUrl: [32m'./product-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'isLoading' does not exist on type 'ProductDetailComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/product-detail/product-detail.html:2:11:
+[37m      2 │ <p *ngIf="![32misLoading[37m && error" style="color: #c22222; font-weight: ...
+        ╵            [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductDetailComponent.
+
+    src/app/pages/product-detail/product-detail.ts:14:15:
+[37m      14 │   templateUrl: [32m'./product-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'isLoading' does not exist on type 'ProductDetailComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/product-detail/product-detail.html:4:13:
+[37m      4 │ <div *ngIf="![32misLoading[37m && product">
+        ╵              [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductDetailComponent.
+
+    src/app/pages/product-detail/product-detail.ts:14:15:
+[37m      14 │   templateUrl: [32m'./product-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: ProductCard is not used within the template of AddProductComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.ts:17:47:
+[37m      17 │   imports: [CommonModule, ReactiveFormsModule, [32mProductCard[37m],
+         ╵                                                [32m~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: RouterLink is not used within the template of AddProductComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.ts:16:47:
+[37m      16 │   imports: [CommonModule, ReactiveFormsModule, [32mRouterLink[37m],
+         ╵                                                [32m~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-product-card' is not a known element:
+1. If 'app-product-card' is an Angular component, then verify that it is included in the '@Component.imports' of this component.
+2. If 'app-product-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.html:73:6:
+[37m      73 │       [32m<app-product-card *ngFor="let p of products" [product]="p">[37m<...
+         ╵       [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AddProductComponent.
+
+    src/app/pages/add-product/add-product.ts:17:15:
+[37m      17 │   templateUrl: [32m'./add-product.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8002: Can't bind to 'product' since it isn't a known property of 'app-product-card'.
+1. If 'app-product-card' is an Angular component and it has 'product' input, then verify that it is included in the '@Component.imports' of this component.
+2. If 'app-product-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@Component.schemas' of this component.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.html:73:51:
+[37m      73 │ ...-card *ngFor="let p of products" [32m[product]="p"[37m></app-product-card>
+         ╵                                     [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AddProductComponent.
+
+    src/app/pages/add-product/add-product.ts:17:15:
+[37m      17 │   templateUrl: [32m'./add-product.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: RouterLink is not used within the template of AddProductComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.ts:16:47:
+[37m      16 │   imports: [CommonModule, ReactiveFormsModule, [32mRouterLink[37m],
+         ╵                                                [32m~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-product-card' is not a known element:
+1. If 'app-product-card' is an Angular component, then verify that it is included in the '@Component.imports' of this component.
+2. If 'app-product-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.html:73:6:
+[37m      73 │       [32m<app-product-card *ngFor="let p of products" [product]="p">[37m<...
+         ╵       [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AddProductComponent.
+
+    src/app/pages/add-product/add-product.ts:17:15:
+[37m      17 │   templateUrl: [32m'./add-product.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8002: Can't bind to 'product' since it isn't a known property of 'app-product-card'.
+1. If 'app-product-card' is an Angular component and it has 'product' input, then verify that it is included in the '@Component.imports' of this component.
+2. If 'app-product-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@Component.schemas' of this component.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/add-product/add-product.html:73:51:
+[37m      73 │ ...-card *ngFor="let p of products" [32m[product]="p"[37m></app-product-card>
+         ╵                                     [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AddProductComponent.
+
+    src/app/pages/add-product/add-product.ts:17:15:
+[37m      17 │   templateUrl: [32m'./add-product.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/edit-product/edit-product' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:12:37:
+[37m      12 │ ...{ EditProductComponent } from [32m'./pages/edit-product/edit-product'[37m;
+         ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/edit-product/edit-product"[0m
+
+    src/app/app.routes.ts:10:37:
+[37m      10 │ ...{ EditProductComponent } from [32m'./pages/edit-product/edit-product'[37m;
+         ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/edit-product/edit-product' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:12:37:
+[37m      12 │ ...{ EditProductComponent } from [32m'./pages/edit-product/edit-product'[37m;
+         ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/edit-product/edit-product"[0m
+
+    src/app/app.routes.ts:10:37:
+[37m      10 │ ...{ EditProductComponent } from [32m'./pages/edit-product/edit-product'[37m;
+         ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'hasDiscount' does not exist on type 'ProductCard'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/product-card/product-card.html:14:35:
+[37m      14 │ ...n class="priceWas" *ngIf="[32mhasDiscount[37m">${{ product.price }}</span>
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductCard.
+
+    src/app/components/product-card/product-card.ts:12:15:
+[37m      12 │   templateUrl: [32m'./product-card.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'hasDiscount' does not exist on type 'ProductCard'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/product-card/product-card.html:15:40:
+[37m      15 │ ...ss="badgeDiscount" *ngIf="[32mhasDiscount[37m">-{{ discountPercent }}%<...
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductCard.
+
+    src/app/components/product-card/product-card.ts:12:15:
+[37m      12 │   templateUrl: [32m'./product-card.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'discountPercent' does not exist on type 'ProductCard'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/product-card/product-card.html:15:57:
+[37m      15 │ ..."badgeDiscount" *ngIf="hasDiscount">-{{ [32mdiscountPercent[37m }}%</span>
+         ╵                                            [32m~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductCard.
+
+    src/app/components/product-card/product-card.ts:12:15:
+[37m      12 │   templateUrl: [32m'./product-card.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'finalPrice' does not exist on type 'ProductCard'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/product-card/product-card.html:18:32:
+[37m      18 │           <span class="priceNow">${{ [32mfinalPrice[37m }}</span>
+         ╵                                      [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductCard.
+
+    src/app/components/product-card/product-card.ts:12:15:
+[37m      12 │   templateUrl: [32m'./product-card.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'hasDiscount' does not exist on type 'ProductCard'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/product-card/product-card.html:19:37:
+[37m      19 │ ...<span class="afterLabel" *ngIf="[32mhasDiscount[37m">after discount</span>
+         ╵                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component ProductCard.
+
+    src/app/components/product-card/product-card.ts:12:15:
+[37m      12 │   templateUrl: [32m'./product-card.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: RouterLink is not used within the template of RegisterComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/register/register.ts:11:47:
+[37m      11 │   imports: [CommonModule, ReactiveFormsModule, [32mRouterLink[37m],
+         ╵                                                [32m~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: RouterLink is not used within the template of CheckoutComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:12:26:
+[37m      12 │   imports: [CommonModule, [32mRouterLink[37m],
+         ╵                           [32m~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:17:25:
+[37m      17 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'auth' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:18:28:
+[37m      18 │   readonly userEmail = this.[32mauth[37m.user?.email || '';
+         ╵                             [32m~~~~[0m
+
+  'auth' is declared here.
+
+    src/app/pages/checkout/checkout.ts:32:4:
+[37m      32 │     [32mprivate readonly auth: Auth[37m,
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:20:25:
+[37m      20 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:17:25:
+[37m      17 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'auth' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:18:28:
+[37m      18 │   readonly userEmail = this.[32mauth[37m.user?.email || '';
+         ╵                             [32m~~~~[0m
+
+  'auth' is declared here.
+
+    src/app/pages/checkout/checkout.ts:32:4:
+[37m      32 │     [32mprivate readonly auth: Auth[37m,
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:20:25:
+[37m      20 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:17:25:
+[37m      17 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'auth' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:18:28:
+[37m      18 │   readonly userEmail = this.[32mauth[37m.user?.email || '';
+         ╵                             [32m~~~~[0m
+
+  'auth' is declared here.
+
+    src/app/pages/checkout/checkout.ts:32:4:
+[37m      32 │     [32mprivate readonly auth: Auth[37m,
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:20:25:
+[37m      20 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:17:25:
+[37m      17 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'auth' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:18:28:
+[37m      18 │   readonly userEmail = this.[32mauth[37m.user?.email || '';
+         ╵                             [32m~~~~[0m
+
+  'auth' is declared here.
+
+    src/app/pages/checkout/checkout.ts:32:4:
+[37m      32 │     [32mprivate readonly auth: Auth[37m,
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:20:25:
+[37m      20 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:17:25:
+[37m      17 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'auth' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:18:28:
+[37m      18 │   readonly userEmail = this.[32mauth[37m.user?.email || '';
+         ╵                             [32m~~~~[0m
+
+  'auth' is declared here.
+
+    src/app/pages/checkout/checkout.ts:32:4:
+[37m      32 │     [32mprivate readonly auth: Auth[37m,
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:20:25:
+[37m      20 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:17:25:
+[37m      17 │   readonly items$ = this.[32mcart[37m.items$;
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'auth' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:18:28:
+[37m      18 │   readonly userEmail = this.[32mauth[37m.user?.email || '';
+         ╵                             [32m~~~~[0m
+
+  'auth' is declared here.
+
+    src/app/pages/checkout/checkout.ts:32:4:
+[37m      32 │     [32mprivate readonly auth: Auth[37m,
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'cart' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/checkout/checkout.ts:20:25:
+[37m      20 │   readonly total$ = this.[32mcart[37m.items$.pipe(
+         ╵                          [32m~~~~[0m
+
+  'cart' is declared here.
+
+    src/app/pages/checkout/checkout.ts:33:4:
+[37m      33 │     [32mprivate readonly cart: Cart[37m
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

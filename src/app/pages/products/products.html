@@ -1,0 +1,28 @@
+<section class="header">
+	<div class="title">
+		<h2>Phones</h2>
+		<p class="sub">Browse all products and filter by brand.</p>
+	</div>
+
+	<div class="toolbar">
+		<label class="filter" aria-label="Filter by brand">
+			<select [value]="selectedBrand" (change)="onBrandChange(($any($event.target).value))">
+				<option value="">All Brands</option>
+				<option *ngFor="let b of brands" [value]="b._id">{{ b.name }}</option>
+			</select>
+		</label>
+	</div>
+</section>
+
+<div class="grid">
+	<ng-container *ngIf="products.length; else emptyTpl">
+		<app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+	</ng-container>
+</div>
+
+<ng-template #emptyTpl>
+	<div class="empty">
+		<p>No products found.</p>
+		<a class="link" routerLink="/">Go home</a>
+	</div>
+</ng-template>

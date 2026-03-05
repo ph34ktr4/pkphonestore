@@ -3,6 +3,17 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "backend: dev",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/phoneshop-backend"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
       "type": "npm",
       "script": "start",
       "isBackground": true,
@@ -37,6 +48,12 @@
           }
         }
       }
+    },
+    {
+      "label": "dev: frontend + backend",
+      "dependsOn": ["backend: dev", "npm: start"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
     }
   ]
 }

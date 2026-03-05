@@ -1,0 +1,68 @@
+<section class="wrap">
+	<div class="card">
+		<h2>Edit Product</h2>
+		<p class="sub">Admin: update an existing product in MongoDB.</p>
+
+		<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+			<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+			<div class="grid" *ngIf="!isLoading">
+				<label class="field">
+					<span>Name</span>
+					<input formControlName="name" placeholder="iPhone 15 Pro" />
+				</label>
+
+				<label class="field">
+					<span>Brand</span>
+					<select formControlName="brandId">
+						<option *ngFor="let b of brands" [value]="b._id">{{ b.name }}</option>
+					</select>
+				</label>
+
+				<label class="field">
+					<span>Price</span>
+					<input type="number" formControlName="price" min="0" step="0.01" />
+				</label>
+
+				<label class="field">
+					<span>Stock</span>
+					<input type="number" formControlName="stock" min="0" step="1" />
+				</label>
+
+				<label class="field">
+					<span>Category</span>
+					<select formControlName="categoryId">
+						<option *ngFor="let c of categories" [value]="c._id">{{ c.name }}</option>
+					</select>
+				</label>
+
+				<div class="field full" *ngIf="imagePreview">
+					<span>Current image</span>
+					<img class="preview" [src]="imagePreview" alt="Product image" />
+				</div>
+
+				<label class="field full">
+					<span>Change Image (optional)</span>
+					<input type="file" accept="image/*" (change)="onImageSelected($event)" />
+				</label>
+
+				<label class="field">
+					<span>Discount Price (optional)</span>
+					<input type="number" formControlName="discountPrice" min="0" step="0.01" />
+				</label>
+
+				<label class="field full">
+					<span>Description (optional)</span>
+					<textarea formControlName="description" rows="3" placeholder="Short description..."></textarea>
+				</label>
+			</div>
+
+			<p class="muted" *ngIf="isLoading">Loading...</p>
+			<p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+
+			<button class="btn" type="submit" [disabled]="isSubmitting || isLoading">
+				{{ isSubmitting ? 'Saving...' : 'Update Product' }}
+			</button>
+		</form>
+	</div>
+</section>

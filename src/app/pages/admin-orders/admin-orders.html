@@ -1,0 +1,98 @@
+<section class="wrap">
+	<div class="card">
+		<h2>Orders</h2>
+		<p class="sub">Admin only: view customer orders.</p>
+
+		<div class="toolbar">
+			<div class="filters">
+				<button class="btn" (click)="setFilter('pending')">
+					Pending
+					<ng-container *ngIf="(pendingCount$ | async) as c">({{ c }})</ng-container>
+				</button>
+				<button class="btn" (click)="setFilter('cancel-requests')">
+					Cancel Requests
+					<ng-container *ngIf="(cancelRequestedCount$ | async) as c">({{ c }})</ng-container>
+				</button>
+				<button class="btn" (click)="setFilter('all')">All</button>
+			</div>
+			<button class="btn" (click)="refresh()">Refresh</button>
+		</div>
+
+		<p class="msg ok" *ngIf="message">{{ message }}</p>
+		<p class="msg err" *ngIf="error">{{ error }}</p>
+
+		<ng-container *ngIf="(orders$ | async) as orders">
+			<div class="empty" *ngIf="orders.length === 0">No orders yet.</div>
+
+			<div class="order" *ngFor="let o of orders; trackBy: trackById">
+				<div class="head">
+					<div>
+						<div class="id">Order: {{ o._id }}</div>
+						<div class="meta">
+							<span class="pill" [class.pending]="o.status === 'pending'" [class.done]="o.status === 'completed' || o.status === 'delivered'">
+								{{ o.status }}
+								<ng-container *ngIf="o.status === 'pending' && o.cancelRequest?.requested"> (cancel requested)</ng-container>
+							</span>
+							<span class="date">{{ o.createdAt | date: 'medium' }}</span>
+						</div>
+					</div>
+					<div class="right">
+						<div class="total">${{ o.total }}</div>
+						<div class="actions">
+							<button
+								*ngIf="o.status === 'pending' && !o.cancelRequest?.requested"
+								class="btn primary"
+								[disabled]="isUpdating(o._id)"
+								(click)="confirmOrder(o._id)"
+							>
+								{{ isUpdating(o._id) ? 'Updating…' : 'Confirm' }}
+							</button>
+							<button
+								*ngIf="o.status === 'pending' && o.cancelRequest?.requested"
+								class="btn primary"
+								[disabled]="isUpdating(o._id)"
+								(click)="approveCancel(o._id)"
+							>
+								{{ isUpdating(o._id) ? 'Updating…' : 'Approve Cancel' }}
+							</button>
+							<button
+								*ngIf="o.status === 'pending' && o.cancelRequest?.requested"
+								class="btn danger"
+								[disabled]="isUpdating(o._id)"
+								(click)="disapproveCancel(o._id)"
+							>
+								{{ isUpdating(o._id) ? 'Updating…' : 'Disapprove' }}
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="customer">
+					<div><strong>Name:</strong> {{ o.customer.fullName }}</div>
+					<div><strong>Phone:</strong> {{ o.customer.phone }}</div>
+					<div><strong>Address:</strong> {{ o.customer.address }}</div>
+					<div *ngIf="o.customer.note"><strong>Note:</strong> {{ o.customer.note }}</div>
+				</div>
+
+				<div class="customer" *ngIf="o.status === 'pending' && o.cancelRequest?.requested">
+					<div><strong>Cancel Request:</strong> Customer wants to cancel this order.</div>
+					<div *ngIf="o.cancelRequest?.requestedAt"><strong>Requested At:</strong> {{ o.cancelRequest?.requestedAt | date: 'medium' }}</div>
+					<div><strong>Action:</strong> Choose Approve or Disapprove.</div>
+				</div>
+				<div class="customer" *ngIf="!o.cancelRequest?.requested && o.cancelRequest?.decision">
+					<div><strong>Cancel Request Decision:</strong> {{ o.cancelRequest?.decision }}</div>
+					<div *ngIf="o.cancelRequest?.handledAt"><strong>Handled At:</strong> {{ o.cancelRequest?.handledAt | date: 'medium' }}</div>
+				</div>
+
+				<div class="items">
+					<div class="item" *ngFor="let it of o.items">
+						<img *ngIf="it.image" [src]="imgUrl(it.image)" alt="" width="44" height="44" style="object-fit: cover; border-radius: 8px; margin-right: 10px;" />
+						<div class="name">{{ it.name }}</div>
+						<div class="qty">x{{ it.quantity }}</div>
+						<div class="price">${{ it.unitPrice }}</div>
+					</div>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+</section>

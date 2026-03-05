@@ -1,0 +1,76 @@
+.hero {
+	padding: 18px;
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	box-shadow: var(--shadow);
+	background: linear-gradient(135deg, rgba(91, 110, 255, 0.12), rgba(168, 85, 247, 0.10));
+}
+
+.copy h1 {
+	margin: 0 0 6px;
+	letter-spacing: -0.4px;
+}
+
+.copy p {
+	margin: 0;
+	max-width: 60ch;
+}
+
+.actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 12px;
+}
+
+.section {
+	margin-top: 16px;
+	display: grid;
+	gap: 12px;
+}
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	padding: 16px;
+	box-shadow: var(--shadow);
+}
+
+.card h2 {
+	margin: 0 0 6px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.mini {
+	background: rgba(255, 255, 255, 0.78);
+	backdrop-filter: blur(10px);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	padding: 14px;
+}
+
+.t {
+	font-weight: 900;
+	margin-bottom: 6px;
+}
+
+@media (max-width: 900px) {
+	.grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 520px) {
+	.actions {
+		flex-direction: column;
+	}
+
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}

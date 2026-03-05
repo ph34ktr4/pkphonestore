@@ -1,0 +1,121 @@
+<section class="page">
+  <div class="container">
+    <div class="topbar">
+      <a class="back" routerLink="/products">← Back to products</a>
+      <span class="crumb" *ngIf="product">{{ product.name }}</span>
+    </div>
+
+    <div class="alert" *ngIf="error">{{ error }}</div>
+
+    <ng-container *ngIf="product; else emptyTpl">
+      <div class="grid">
+        <div class="mediaCard">
+          <ng-container *ngIf="imageSrc; else noImageTpl">
+            <div class="imageWrap">
+              <img imgRetry [imgRetryMax]="6" class="image" [src]="imageSrc" [alt]="product.name" />
+            </div>
+          </ng-container>
+          <ng-template #noImageTpl>
+            <div class="imageFallback">No image</div>
+          </ng-template>
+        </div>
+
+        <div class="infoCard">
+          <div class="titleRow">
+            <h1 class="title">{{ product.name }}</h1>
+            <span class="stockBadge" [class.stockOut]="isOutOfStock">
+              {{ isOutOfStock ? 'Out of stock' : 'In stock' }}
+            </span>
+          </div>
+
+          <div class="metaRow">
+            <span class="pill" *ngIf="brandName">Brand: {{ brandName }}</span>
+            <span class="pill" *ngIf="categoryName">Category: {{ categoryName }}</span>
+          </div>
+
+          <div class="priceBox">
+            <div class="priceNow">${{ displayPrice }}</div>
+            <div class="priceWas" *ngIf="hasDiscount">${{ product.price }}</div>
+            <div class="priceSave" *ngIf="hasDiscount">Save {{ discountPercent }}%</div>
+          </div>
+
+          <p class="desc" *ngIf="product.description; else noDescTpl">{{ product.description }}</p>
+          <ng-template #noDescTpl>
+            <p class="desc muted">No description yet.</p>
+          </ng-template>
+
+          <div class="buyRow">
+            <div class="qty">
+              <button
+                type="button"
+                class="qtyBtn"
+                (click)="decQty()"
+                [disabled]="qty <= 1 || isOutOfStock"
+                aria-label="Decrease quantity"
+              >
+                −
+              </button>
+              <input
+                class="qtyInput"
+                type="number"
+                inputmode="numeric"
+                [value]="qty"
+                (input)="onQtyInput($event)"
+                (blur)="onQtyBlur($event)"
+                [disabled]="isOutOfStock"
+                min="1"
+                [attr.max]="maxQty !== null ? maxQty : null"
+                step="1"
+              />
+              <button
+                type="button"
+                class="qtyBtn"
+                (click)="incQty()"
+                [disabled]="isOutOfStock || (maxQty !== null && qty >= maxQty)"
+                aria-label="Increase quantity"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="btnPrimary"
+              (click)="addToCart()"
+              [disabled]="isOutOfStock || isAdding"
+            >
+              {{ isOutOfStock ? 'Out of stock' : (isAdding ? 'Adding…' : 'Add to Cart') }}
+            </button>
+          </div>
+
+          <div class="stockNote" *ngIf="product.stock !== undefined">
+            Available: <strong>{{ product.stock }}</strong>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #emptyTpl>
+      <ng-container *ngIf="!error">
+        <ng-container *ngTemplateOutlet="loadingTpl"></ng-container>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #loadingTpl>
+      <div class="grid">
+        <div class="mediaCard skeleton"></div>
+        <div class="infoCard">
+          <div class="sLine w70"></div>
+          <div class="sLine w45"></div>
+          <div class="sLine w90"></div>
+          <div class="sLine w80"></div>
+          <div class="sLine w60"></div>
+          <div class="sBtns">
+            <div class="sBtn"></div>
+            <div class="sBtn primary"></div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</section>

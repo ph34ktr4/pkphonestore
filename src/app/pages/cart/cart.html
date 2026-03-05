@@ -1,0 +1,42 @@
+<h2>Cart</h2>
+
+<ng-container *ngIf="(items$ | async) as items">
+	<div class="empty" *ngIf="items.length === 0">
+		<p>Your cart is empty.</p>
+		<a class="link" [routerLink]="['/products']">Go to products</a>
+	</div>
+
+	<div class="list" *ngIf="items.length > 0">
+		<article class="row" *ngFor="let item of items">
+			<img imgRetry class="thumb" *ngIf="item.product.image" [src]="getImageSrc(item.product.image)" [alt]="item.product.name" />
+
+			<div class="info">
+				<div class="name">{{ item.product.name }}</div>
+				<div class="desc" *ngIf="item.product.description">{{ item.product.description }}</div>
+				<div class="price">
+					<span class="now">${{ item.product.discountPrice || item.product.price }}</span>
+					<span class="was" *ngIf="item.product.discountPrice && item.product.discountPrice < item.product.price">
+						${{ item.product.price }}
+					</span>
+				</div>
+			</div>
+
+			<div class="qty">
+				<button type="button" class="btn" (click)="removeOne(item.product._id)">-</button>
+				<div class="qtyVal">{{ item.quantity }}</div>
+				<button type="button" class="btn btnPrimary" (click)="addOne(item.product._id)">Add</button>
+			</div>
+
+			<div class="actions">
+				<a class="btn" [routerLink]="['/product', item.product._id]">View</a>
+				<button type="button" class="btn btnDanger" (click)="removeAll(item.product._id)">Remove</button>
+			</div>
+		</article>
+
+		<div class="summary">
+			<div class="total">Total: <strong>${{ total$ | async }}</strong></div>
+			<button type="button" class="btn" (click)="clear()">Clear cart</button>
+			<a class="btn btnPrimary" [routerLink]="['/order']">Order</a>
+		</div>
+	</div>
+</ng-container>

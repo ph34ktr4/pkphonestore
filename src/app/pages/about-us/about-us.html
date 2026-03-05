@@ -1,0 +1,29 @@
+<section class="hero">
+	<div class="copy">
+		<h1>About PK Phone Store</h1>
+		<p class="muted">
+			We’re a simple, modern phone store built to be fast, clean, and easy to use.
+		</p>
+		<div class="actions">
+			<a class="btn btnPrimary" routerLink="/products">Shop now</a>
+			<a class="btn btnSoft" routerLink="/contact">Contact us</a>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="card">
+		<h2>Our mission</h2>
+		<p class="muted">
+			Help customers find the right phone quickly — with transparent pricing, smooth checkout, and a
+			professional shopping experience.
+		</p>
+	</div>
+
+	<div class="grid">
+		<div class="mini" *ngFor="let h of highlights">
+			<div class="t">{{ h.title }}</div>
+			<div class="muted">{{ h.desc }}</div>
+		</div>
+	</div>
+</section>

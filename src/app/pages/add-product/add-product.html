@@ -1,0 +1,108 @@
+<section class="wrap">
+  <div class="card">
+    <h2>Add Product</h2>
+    <p class="sub">Admin: create a new product in MongoDB.</p>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <div class="gridWrap">
+      <div class="grid gridReal" [class.hidden]="isLoading">
+        <label class="field">
+          <span>Name</span>
+          <input formControlName="name" placeholder="Product Name" />
+        </label>
+
+        <label class="field">
+          <span>Brand</span>
+          <select formControlName="brandId">
+            <option *ngFor="let b of brands" [value]="b._id">{{ b.name }}</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Price</span>
+          <input type="number" formControlName="price" min="0" step="0.01" />
+        </label>
+
+        <label class="field">
+          <span>Stock</span>
+          <input type="number" formControlName="stock" min="0" step="1" />
+        </label>
+
+        <label class="field">
+          <span>Category</span>
+          <select formControlName="categoryId">
+            <option *ngFor="let c of categories" [value]="c._id">{{ c.name }}</option>
+          </select>
+        </label>
+
+        <label class="field full">
+          <span>Image (from your PC)</span>
+          <input type="file" accept="image/*" (change)="onImageSelected($event)" />
+        </label>
+
+        <label class="field">
+          <span>Discount Price (optional)</span>
+          <input type="number" formControlName="discountPrice" min="0" step="0.01" />
+        </label>
+
+        <label class="field full">
+          <span>Description (optional)</span>
+          <textarea formControlName="description" rows="3" placeholder="Short description..."></textarea>
+        </label>
+        </div>
+
+        <div class="grid gridSkeleton" *ngIf="isLoading">
+          <div class="skeletonField" *ngFor="let _ of [1,2,3,4,5,6,7,8]"></div>
+        </div>
+        </div>
+
+      <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+
+      <button class="btn" type="submit" [disabled]="isSubmitting || isLoading">
+        {{ isSubmitting ? 'Saving...' : 'Add Product' }}
+      </button>
+    </form>
+  </div>
+
+  <div class="card productsCard">
+    <div class="productsHeader">
+      <h3>All Products</h3>
+      <p class="sub">Preview what's already in your database.</p>
+    </div>
+
+    <p class="error" *ngIf="productsError">{{ productsError }}</p>
+
+    <div class="productsGrid" *ngIf="products.length">
+      <article class="pCard" *ngFor="let p of products">
+        <a class="pImageWrap" [routerLink]="['/product', p._id]">
+          <img imgRetry class="pImage" *ngIf="getImageSrc(p)" [src]="getImageSrc(p)" [alt]="p.name" />
+        </a>
+        <div class="pBody">
+          <div class="pName">{{ p.name }}</div>
+          <div class="pMeta">{{ getBrandName(p) }}</div>
+          <div class="pBottom">
+            <div class="pPrice">
+              <span class="pNow">${{ p.discountPrice || p.price }}</span>
+              <span class="pWas" *ngIf="p.discountPrice && p.discountPrice < p.price">${{ p.price }}</span>
+            </div>
+            <div class="pActions">
+              <a class="pBtn" [routerLink]="['/product', p._id]">View</a>
+              <a class="pBtn" [routerLink]="['/admin/edit-product', p._id]">Update</a>
+              <button class="pBtn pBtnDanger" type="button" (click)="deleteProduct(p)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="productsGrid" *ngIf="!products.length && productsLoading">
+      <div class="skeletonCard" *ngFor="let _ of [1,2,3,4]"></div>
+    </div>
+
+    <p class="muted" *ngIf="!productsLoading && !productsError && !products.length">
+      No products found.
+    </p>
+  </div>
+</section>

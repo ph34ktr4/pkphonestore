@@ -1,0 +1,152 @@
+
+.empty {
+	padding: 16px;
+	border: 1px solid #eee;
+	border-radius: 14px;
+	background: #fff;
+}
+
+.link {
+	text-decoration: none;
+	color: var(--primary);
+	font-weight: 700;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: 80px 1fr auto auto;
+	gap: 12px;
+	align-items: center;
+	border: 1px solid #ececec;
+	border-radius: 16px;
+	background: #fff;
+	padding: 12px;
+}
+
+.thumb {
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+	background: #f7f7f7;
+	border-radius: 12px;
+}
+
+.name {
+	font-weight: 800;
+}
+
+.desc {
+	margin-top: 6px;
+	color: #444;
+	font-size: 13px;
+	line-height: 1.25;
+	max-height: 3.75em;
+	overflow: hidden;
+}
+
+.price {
+	margin-top: 8px;
+	display: flex;
+	gap: 8px;
+	align-items: baseline;
+}
+
+.was {
+	color: #888;
+	text-decoration: line-through;
+	font-size: 12px;
+}
+
+.qty {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.qtyVal {
+	min-width: 24px;
+	text-align: center;
+	font-weight: 800;
+}
+
+.actions {
+	display: flex;
+	gap: 8px;
+}
+
+.btn {
+	padding: 8px 12px;
+	border-radius: 12px;
+	border: 1px solid rgba(59, 91, 255, 0.22);
+	background: var(--primarySoft);
+	color: var(--primary);
+	font-weight: 700;
+	font-size: 13px;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.btn:hover {
+	background: var(--primarySoftHover);
+	transform: translateY(-1px);
+	box-shadow: var(--shadow);
+}
+
+.btnPrimary {
+	border-color: rgba(59, 91, 255, 0.45);
+	background: linear-gradient(135deg, var(--primary) 0%, var(--primary2) 100%);
+	color: #fff;
+	box-shadow: 0 12px 24px rgba(59, 91, 255, 0.22);
+}
+
+.btnPrimary:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 16px 32px rgba(59, 91, 255, 0.28);
+}
+
+.btnDanger {
+	border-color: #ffdddd;
+	background: #fff4f4;
+	color: #c22222;
+}
+
+.btnDanger:hover {
+	background: #ffecec;
+}
+
+.summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	padding: 12px;
+	border: 1px solid #ececec;
+	border-radius: 16px;
+	background: #fff;
+}
+
+.total {
+	font-size: 15px;
+}
+
+@media (max-width: 860px) {
+	.row {
+		grid-template-columns: 70px 1fr;
+	}
+	.qty,
+	.actions {
+		grid-column: 1 / -1;
+	}
+	.summary {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}

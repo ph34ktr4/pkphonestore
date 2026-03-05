@@ -1,0 +1,120 @@
+<section class="wrap">
+	<div class="card">
+		<h2>Order</h2>
+		<p class="sub">Logged in as: <strong>{{ userEmail }}</strong></p>
+		<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+		<form class="form" [formGroup]="infoForm" (ngSubmit)="placeOrder()">
+			<h3 class="title">Customer info</h3>
+
+			<label class="field">
+				<span>Full name</span>
+				<input formControlName="fullName" placeholder="Your name" />
+				<small *ngIf="infoForm.controls.fullName.touched && infoForm.controls.fullName.invalid">Name is required.</small>
+			</label>
+
+			<label class="field">
+				<span>Phone number</span>
+				<input formControlName="phone" placeholder="012345678" />
+				<small *ngIf="infoForm.controls.phone.touched && infoForm.controls.phone.invalid">Phone is required.</small>
+			</label>
+
+			<label class="field">
+				<span>Address</span>
+				<textarea rows="3" formControlName="address" placeholder="Your delivery address"></textarea>
+				<small *ngIf="infoForm.controls.address.touched && infoForm.controls.address.invalid">Address is required.</small>
+			</label>
+
+			<label class="field">
+				<span>Note (optional)</span>
+				<textarea rows="2" formControlName="note" placeholder="Any note for delivery (optional)"></textarea>
+			</label>
+		</form>
+
+		<form class="form" [formGroup]="paymentForm" (ngSubmit)="placeOrder()">
+			<h3 class="title">Card information</h3>
+
+			<label class="field">
+				<span>Card holder</span>
+				<input formControlName="cardHolder" placeholder="Name on card" />
+				<small *ngIf="paymentForm.controls.cardHolder.touched && paymentForm.controls.cardHolder.invalid">Card holder is required.</small>
+			</label>
+
+			<label class="field">
+				<span>Card number</span>
+				<input formControlName="cardNumber" inputmode="numeric" placeholder="1234123412341234" />
+				<small *ngIf="paymentForm.controls.cardNumber.touched && paymentForm.controls.cardNumber.invalid">Card number must have 13-19 digits (spaces allowed).</small>
+			</label>
+
+			<div class="two">
+				<label class="field">
+					<span>Exp month</span>
+					<input formControlName="expMonth" inputmode="numeric" placeholder="MM" />
+					<small *ngIf="paymentForm.controls.expMonth.touched && paymentForm.controls.expMonth.invalid">Month 1-12.</small>
+				</label>
+
+				<label class="field">
+					<span>Exp year</span>
+					<input formControlName="expYear" inputmode="numeric" placeholder="YYYY" />
+					<small *ngIf="paymentForm.controls.expYear.touched && paymentForm.controls.expYear.invalid">Year is required.</small>
+				</label>
+			</div>
+
+			<label class="field">
+				<span>CVV</span>
+				<input formControlName="cvv" inputmode="numeric" placeholder="123" />
+				<small *ngIf="paymentForm.controls.cvv.touched && paymentForm.controls.cvv.invalid">CVV must be 3-4 digits.</small>
+			</label>
+		</form>
+
+		<ng-container *ngIf="(items$ | async) as items">
+			<div class="empty" *ngIf="items.length === 0">
+				<p>Your cart is empty.</p>
+				<a class="link" [routerLink]="['/products']">Go to products</a>
+			</div>
+
+			<div *ngIf="items.length > 0">
+				<div class="row" *ngFor="let item of items">
+					<div class="name">{{ item.product.name }}</div>
+					<div class="qty">x{{ item.quantity }}</div>
+					<div class="price">${{ (item.product.discountPrice && item.product.discountPrice > 0) ? item.product.discountPrice : item.product.price }}</div>
+				</div>
+
+				<div class="summary">
+					<div>Total: <strong>${{ total$ | async }}</strong></div>
+					<button class="btn" type="button" [disabled]="isSubmitting" (click)="placeOrder()">
+						{{ isSubmitting ? 'Placing...' : 'Place Order' }}
+					</button>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+
+	<div class="modalOverlay" *ngIf="successPopup as s">
+		<div class="modal">
+			<h3>Order placed successfully</h3>
+			<p class="muted">Order ID: <strong>{{ s.orderId }}</strong></p>
+			<p class="muted">Stored in order_details: <strong>{{ s.detailsId }}</strong></p>
+
+			<div class="modalBox">
+				<div class="line" *ngFor="let it of s.items">
+					<div class="lName">{{ it.name }}</div>
+					<div class="lQty">x{{ it.quantity }}</div>
+					<div class="lPrice">${{ it.unitPrice }}</div>
+				</div>
+				<div class="modalTotal">Total: <strong>${{ s.total }}</strong></div>
+			</div>
+
+			<div class="modalBox">
+				<div class="muted"><strong>Customer:</strong> {{ s.customer.fullName }} • {{ s.customer.phone }}</div>
+				<div class="muted"><strong>Address:</strong> {{ s.customer.address }}</div>
+				<div class="muted" *ngIf="s.customer.note"><strong>Note:</strong> {{ s.customer.note }}</div>
+				<div class="muted"><strong>Card:</strong> {{ s.payment.cardHolder }} • **** {{ s.payment.last4 }} • {{ s.payment.expMonth }}/{{ s.payment.expYear }}</div>
+			</div>
+
+			<div class="modalActions">
+				<button class="btn" type="button" (click)="closeSuccessPopup()">OK</button>
+			</div>
+		</div>
+	</div>
+</section>
